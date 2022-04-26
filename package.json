@@ -1,0 +1,19 @@
+{
+  "name": "index.js",
+  "version": "1.0.0",
+  "description": "Creación de primer microservicio utilizando NodeJs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EduardoBecerraM/Intro-a-backend.git"
+  },
+  "author": "EduardoBecerraM",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EduardoBecerraM/Intro-a-backend/issues"
+  },
+  "homepage": "https://github.com/EduardoBecerraM/Intro-a-backend#readme"
+}
