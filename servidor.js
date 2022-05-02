@@ -17,7 +17,7 @@ var nimeTypes = {
     '.html': 'text/html',
     '.js': 'textjavascript',
     '.css': 'text/css',
-    'png': 'image/png',
+    '.png': 'image/png',
     '.json': 'application/json'
 };
 
@@ -26,7 +26,7 @@ contentType = mimeTypes[extname] || 'application/octet-stream';
 fs.readFile(filePath, function(error, content){
     if(error){
         if(error.code == 'ENDENT'){
-            fs.readFile('./404.html)', function(error, content) {
+            fs.readFile('./404.html', function(error, content) {
                 response.writeHead(200, { 'Content-Type': contentType });
                 response.end(content, 'utf-8');
             });
@@ -44,5 +44,5 @@ fs.readFile(filePath, function(error, content){
 });
 
 
-}),listen(3000);
+}).listen(3000);
 console.log('Server running at http://192.168.50.19:3000/');
