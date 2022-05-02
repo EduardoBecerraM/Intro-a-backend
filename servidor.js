@@ -9,7 +9,7 @@ http.createServer(function (request, response) {
     if(filePath == './'){
         filePath = './index.html';
     }
-})
+
 
 var extname = String(path.extname(filePath)).toLowerCase();
 var contentType = 'text/html';
@@ -21,6 +21,8 @@ var nimeTypes = {
     '.json': 'application/json'
 };
 
+contentType = mimeTypes[extname] || 'application/octet-stream';
+
 fs.readFile(filePath, function(error, content){
     if(error){
         if(error.code == 'ENDENT'){
@@ -31,7 +33,7 @@ fs.readFile(filePath, function(error, content){
         }
         else{
             response.writeHead(500);
-            response.end('Sorry, check with the site admin for error: ');
+            response.end('Sorry, check with the site admin for error: '+error.code);
             response.end();
         }
     }
@@ -40,3 +42,7 @@ fs.readFile(filePath, function(error, content){
         response.end(content, 'utf-8');
     }
 });
+
+
+}),listen(3000);
+console.log('Server running at http://192.168.50.19:3000/');
